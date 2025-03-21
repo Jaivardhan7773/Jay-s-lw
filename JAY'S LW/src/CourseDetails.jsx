@@ -16,7 +16,7 @@ const CourseDetails = () => {
       try {
         const fetchedCourses = await Promise.all(
           courseIds.map(async (courseId) => {
-            const response = await axios.get(`http://localhost:5000/courses/${courseId}`);
+            const response = await axios.get(`https://jays-lw.onrender.com/courses/${courseId}`);
             return response.status === 200 ? response.data : null;
           })
         );
@@ -43,7 +43,7 @@ const CourseDetails = () => {
     }
 
     try {
-      const response = await axios.delete(`http://localhost:5000/getSelectedCourses/${userEmail}/${courseId}`);
+      const response = await axios.delete(`https://jays-lw.onrender.com/getSelectedCourses/${userEmail}/${courseId}`);
       if (response.status === 200) {
         const updatedCourseIds = courseIds.filter((id) => id.toString() !== courseId.toString());
         localStorage.setItem(`selectedCourses_${userEmail}`, JSON.stringify(updatedCourseIds));

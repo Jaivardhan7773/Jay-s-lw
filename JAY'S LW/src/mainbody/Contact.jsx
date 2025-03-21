@@ -14,7 +14,7 @@ const Contact =()=>{
         alert("All fields are required")
         return;
       }
-      const response = await fetch('http://localhost:5000/Query' , {
+      const response = await fetch('https://jays-lw.onrender.com/Query' , {
         method:"POST" , 
         headers :{
           'Content-Type' : 'application/json'

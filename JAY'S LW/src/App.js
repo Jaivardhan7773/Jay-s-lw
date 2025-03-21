@@ -31,7 +31,7 @@ function App() {
   //this checks if the server is live or not
   const checkServerStatus = async () => {
     try {
-      const response = await fetch('http://localhost:5000/ping');
+      const response = await fetch('https://jays-lw.onrender.com/ping');
       if (response.ok) {
         setStatusMessage("Server is up and running!");
         setLoading(false);

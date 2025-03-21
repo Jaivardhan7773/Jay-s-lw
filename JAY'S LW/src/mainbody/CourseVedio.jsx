@@ -31,7 +31,7 @@ const CourseVideo = () => {
 
   const fetchComments = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/comments/${title}`);
+      const res = await axios.get(`https://jays-lw.onrender.com/comments/${title}`);
       setComments(res.data);
     } catch (error) {
       console.error('Error fetching comments:', error);
