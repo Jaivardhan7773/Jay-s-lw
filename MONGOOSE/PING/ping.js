@@ -20,7 +20,7 @@ mongoose
   app.get('/ping', (req, res) => {
     res.status(200).send('Server is up!');
   });
-
+ //tum sabki 
   app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
   });
