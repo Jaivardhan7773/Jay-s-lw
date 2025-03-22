@@ -1,7 +1,6 @@
 import React  from "react";
 import Subfooter from "./Subfooter";
 import Footer from "./Footer";
-import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 const Style = () => {

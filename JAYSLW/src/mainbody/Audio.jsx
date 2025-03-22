@@ -13,7 +13,7 @@ const Audio =()=>{
        </div>
 
        <div className="container text-center">
-       <img src="https://cdn.britannica.com/48/152748-050-972E7693/Talbot-Hall-Maryland-University-of-Maryland-College.jpg" style={{width:"1000px",maxHeight:"400px"}} className="img-fluid pb-5"/>
+       <img src="https://cdn.britannica.com/48/152748-050-972E7693/Talbot-Hall-Maryland-University-of-Maryland-College.jpg" alt="is attribute ki aisi taisi" style={{width:"1000px",maxHeight:"400px"}} className="img-fluid pb-5"/>
        <div className="container pt-lg-5" style={{maxWidth:"800px"}}>
         <h5 className="card-text aboutpara mb-5">
         Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation 
