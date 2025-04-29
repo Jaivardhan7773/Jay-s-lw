@@ -13,7 +13,7 @@ const Standard =()=>{
        </div>
 
        <div class="container text-center">
-       <img src="https://images.unsplash.com/photo-1496150590317-f8d952453f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:"1000px",maxHeight:"400px"}} class="img-fluid pb-5"/>
+       <img src="https://images.unsplash.com/photo-1496150590317-f8d952453f93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:"1000px",maxHeight:"400px"}} alt="Gallery Image" class="img-fluid pb-5"/>
        <div class="container pt-lg-5" style={{maxWidth:"800px"}}>
         <h5 class="card-text aboutpara mb-5">
         Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation 
