@@ -2,7 +2,7 @@ import React from "react";
 import Subfooter from './Subfooter';
 import Footer from './Footer';
 import Comment from "./Comment";
-import { NavLink } from "react-router-dom";
+
 const Gallery =()=>{
     return(
         <>
