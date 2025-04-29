@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Middleware
-app.use(cors({ origin: ['http://localhost:3000'] }));
+app.use(cors({ origin: ['https://astrajay.netlify.app'] }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
