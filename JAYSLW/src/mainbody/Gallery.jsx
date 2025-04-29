@@ -13,7 +13,7 @@ const Gallery =()=>{
        </div>
 
        <div className="container text-center">
-       <img src="https://images.unsplash.com/photo-1658314756268-3552b9ba2784?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:"1000px",maxHeight:"400px"}} className="img-fluid pb-5"/>
+       <img src="https://images.unsplash.com/photo-1658314756268-3552b9ba2784?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{width:"1000px",maxHeight:"400px"}} alt="Gallery Image" className="img-fluid pb-5"/>
        <div className="container pt-lg-5" style={{maxWidth:"800px"}}>
         <h5 className="card-text aboutpara mb-5">
         Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation 
