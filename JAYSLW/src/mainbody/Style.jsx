@@ -7,7 +7,7 @@ const Style = () => {
     const [posts, setPosts] = React.useState([]);
     useEffect(() => {
         axios
-          .get(`http://localhost:5000/posts`)
+          .get(`https://astra-ul2e.onrender.com/posts`)
           .then((res) => setPosts(res.data))
           .catch((err) => {
             alert("Error fetching queries!");

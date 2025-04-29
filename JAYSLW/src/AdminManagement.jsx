@@ -29,7 +29,7 @@ const AdminManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:5000/posts`, post);
+      const res = await axios.post(`https://astra-ul2e.onrender.com/posts`, post);
       setMessage("Post added successfully!");
       setPost({ title: "", description: "", imageUrl: "", date: "", level: "" }); // Reset form
     } catch (error) {
@@ -41,7 +41,7 @@ const AdminManagement = () => {
   // get all the courses from server
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/posts`)
+      .get(`https://astra-ul2e.onrender.com/posts`)
       .then((res) => setPosts(res.data))
       .catch((err) => {
         alert("Error fetching queries!");
@@ -52,7 +52,7 @@ const AdminManagement = () => {
 
 //  get all the users queries from the server
   useEffect(() => {
-    axios.get(`http://localhost:5000/GetQuery`).then((res) => setQueries(res.data))
+    axios.get(`https://astra-ul2e.onrender.com/GetQuery`).then((res) => setQueries(res.data))
     .catch((err) => alert("error fetching queries" , err))
   } ,[]);
 
@@ -61,7 +61,7 @@ const AdminManagement = () => {
   const handleImageChange = async (id) => {
     const newImageUrl = prompt("Enter new image URL:");
     if (!newImageUrl) return;
-      const res = await axios.put(`http://localhost:5000/posts/${id}`, {
+      const res = await axios.put(`https://astra-ul2e.onrender.com/posts/${id}`, {
         imageUrl: newImageUrl,
       });
       setPosts(posts.map((post) => (post._id === id ? res.data : post)));
@@ -73,7 +73,7 @@ const AdminManagement = () => {
  // admin authentication 
   const fetchUsers = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/users`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/admin/users`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ useEffect(() => {
   //deleting a user 
   const deleteUser = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/users/${id}`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/admin/users/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ useEffect(() => {
   //making a another admin
   const makeAdmin = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/users/${id}`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/admin/users/${id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ useEffect(() => {
   //removing an admin
   const removeAdmin = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/users/removeAdmin/${id}`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/admin/users/removeAdmin/${id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ useEffect(() => {
    //this cancels a user subscription
   const cancelPlan = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/users/cancelPlan/${id}`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/admin/users/cancelPlan/${id}`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',
@@ -206,7 +206,7 @@ useEffect(() => {
 
   // this delete a user's query
   const handleMarkAsRead = async (id) => {
-      await axios.delete(`http://localhost:5000/Query/${id}`);
+      await axios.delete(`https://astra-ul2e.onrender.com/Query/${id}`);
       setQueries(queries.filter(query => query._id !== id));
       alert("Query marked as read and deleted successfully");
   
@@ -217,7 +217,7 @@ useEffect(() => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
   
     try {
-      await axios.delete(`http://localhost:5000/posts/${postId}`);
+      await axios.delete(`https://astra-ul2e.onrender.com/posts/${postId}`);
       setPosts(posts.filter((post) => post._id !== postId)); // Remove from UI
     } catch (error) {
       console.error("Error deleting post:", error);
@@ -230,7 +230,7 @@ useEffect(() => {
     if (newValue !== null && newValue.trim() !== "") {
       try {
         const updatedPost = { ...post, [field]: newValue };
-        await axios.put(`http://localhost:5000/posts/${post._id}`, updatedPost);
+        await axios.put(`https://astra-ul2e.onrender.com/posts/${post._id}`, updatedPost);
   
         setPosts(posts.map((p) => (p._id === post._id ? updatedPost : p)));
       } catch (error) {

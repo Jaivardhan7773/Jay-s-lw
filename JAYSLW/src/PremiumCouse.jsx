@@ -14,7 +14,7 @@ const PremiumCourse = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:5000/premium`, {
+        const response = await fetch(`https://astra-ul2e.onrender.com/premium`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

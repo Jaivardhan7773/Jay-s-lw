@@ -23,7 +23,7 @@ const navigate = useNavigate();
     setErrorMessage(''); // Clear previous error
 
     try {
-      const response = await fetch(`http://localhost:5000/SignUp`, {
+      const response = await fetch(`https://astra-ul2e.onrender.com/SignUp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -11,7 +11,7 @@ const Login = () => {
   // Moved outside for better scope management
   const fetchUserCourses = async (userEmail) => {
     try {
-      const res = await axios.get(`http://localhost:5000/getSelectedCourses/${userEmail}`);
+      const res = await axios.get(`https://astra-ul2e.onrender.com/getSelectedCourses/${userEmail}`);
       localStorage.setItem(`selectedCourses_${userEmail}`, JSON.stringify(res.data.selectedCourses));
     } catch (error) {
       console.error('Error fetching user courses:', error);
@@ -29,7 +29,7 @@ const Login = () => {
     setErrorMessage('');
 
     try {
-      const response = await axios.post(`http://localhost:5000/auth`, {
+      const response = await axios.post(`https://astra-ul2e.onrender.com/auth`, {
         email,
         password
       });

@@ -31,7 +31,7 @@ const CourseVideo = () => {
 
   const fetchComments = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/comments/${title}`);
+      const res = await axios.get(`https://astra-ul2e.onrender.com/comments/${title}`);
       setComments(res.data);
     } catch (error) {
       console.error('Error fetching comments:', error);
@@ -49,7 +49,7 @@ const CourseVideo = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/comments', {
+      await axios.post('https://astra-ul2e.onrender.com/comments', {
         courseTitle: title,
         name: user.name,
         comment: comment
