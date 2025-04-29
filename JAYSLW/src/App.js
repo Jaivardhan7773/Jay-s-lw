@@ -31,7 +31,7 @@ function App() {
   //this checks if the server is live or not
   const checkServerStatus = async () => {
     try {
-      const response = await fetch('https://jays-lw.onrender.com/ping');
+      const response = await fetch(`http://localhost:5000/ping`);
       if (response.ok) {
         setStatusMessage("Server is up and running!");
         setLoading(false);
@@ -60,18 +60,18 @@ function App() {
     checkServerStatus();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="loading-screen d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-        <div className="spinner-border text-primary mb-3" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-        <div className="text-center text-muted">
-          {statusMessage}
-        </div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="loading-screen d-flex flex-column justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+  //       <div className="spinner-border text-primary mb-3" role="status">
+  //         <span className="visually-hidden">Loading...</span>
+  //       </div>
+  //       <div className="text-center text-muted">
+  //         {statusMessage}
+  //       </div>
+  //     </div>
+  //   );
+  // }
   return (
     <>
     <ToastContainer autoClose={3000} position="bottom-right" />

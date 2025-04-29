@@ -17,7 +17,7 @@ const Car = () => {
     const userEmail = user.email;
   
     try {
-      await axios.post('https://jays-lw.onrender.com/saveSelectedCourses', {
+      await axios.post(`http://localhost:5000/saveSelectedCourses`, {
         email: userEmail,
         courseId: courseId, // Send only the new course
       });
@@ -46,7 +46,7 @@ const Car = () => {
     // Fetching posts from the backend
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('https://jays-lw.onrender.com/posts');
+        const res = await axios.get(`http://localhost:5000/posts`);
         setPosts(res.data);
       } catch (error) {
         console.log('Error fetching posts:', error);

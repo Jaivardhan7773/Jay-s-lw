@@ -33,7 +33,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        `https://jays-lw.onrender.com/updateUser/${user._id}`,
+        `http://localhost:5000/updateUser/${user._id}`,
         updatedUser
       );
       console.log(response.data);

@@ -45,7 +45,7 @@ const [user, setUser] = useState(() => {
     }
   
     try {
-      const response = await fetch('https://jays-lw.onrender.com/premium', {
+      const response = await fetch(`http://localhost:3000/premium`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

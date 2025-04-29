@@ -23,7 +23,7 @@ const navigate = useNavigate();
     setErrorMessage(''); // Clear previous error
 
     try {
-      const response = await fetch('https://jays-lw.onrender.com/SignUp', {
+      const response = await fetch(`http://localhost:5000/SignUp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

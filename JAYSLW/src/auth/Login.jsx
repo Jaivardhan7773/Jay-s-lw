@@ -11,7 +11,7 @@ const Login = () => {
   // Moved outside for better scope management
   const fetchUserCourses = async (userEmail) => {
     try {
-      const res = await axios.get(`https://jays-lw.onrender.com/getSelectedCourses/${userEmail}`);
+      const res = await axios.get(`http://localhost:5000/getSelectedCourses/${userEmail}`);
       localStorage.setItem(`selectedCourses_${userEmail}`, JSON.stringify(res.data.selectedCourses));
     } catch (error) {
       console.error('Error fetching user courses:', error);
@@ -29,45 +29,40 @@ const Login = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://jays-lw.onrender.com/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
+      const response = await axios.post(`http://localhost:5000/auth`, {
+        email,
+        password
       });
-
-      const data = await response.json();
-      
-      if (response.ok) {
-  
-        localStorage.setItem('user', JSON.stringify({
-          _id: data.user._id, 
-          name: data.user.name,
-          email: data.user.email,
-          number: data.user.number,
-          isLoggedIn: true,
-          isAdmin: data.user.isAdmin
-        }));
-
-      
-        fetchUserCourses(data.user.email);
-
-
-        if (data.user.isAdmin) {
-          localStorage.setItem('adminEmail', data.user.email);
-        }
-
-        window.dispatchEvent(new Event("localStorageChange")); 
-        toast.success('Login successful!');
-        navigate('/');
-      } else {
-        setErrorMessage(data.message);
+    
+      const data = response.data;
+    
+      localStorage.setItem('user', JSON.stringify({
+        _id: data.user._id,
+        name: data.user.name,
+        email: data.user.email,
+        number: data.user.number,
+        isLoggedIn: true,
+        isAdmin: data.user.isAdmin
+      }));
+    
+      fetchUserCourses(data.user.email);
+    
+      if (data.user.isAdmin) {
+        localStorage.setItem('adminEmail', data.user.email);
       }
+    
+      window.dispatchEvent(new Event("localStorageChange"));
+      toast.success('Login successful!');
+      navigate('/');
+      
     } catch (error) {
-      setErrorMessage('Something went wrong. Please try again later.');
+      if (error.response && error.response.data && error.response.data.message) {
+        setErrorMessage(error.response.data.message);
+      } else {
+        setErrorMessage('Something went wrong. Please try again later.');
+      }
     }
-  };
+  }
 
   return (
     <>
